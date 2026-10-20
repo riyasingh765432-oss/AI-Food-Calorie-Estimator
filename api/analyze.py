@@ -49,9 +49,9 @@ class handler(BaseHTTPRequestHandler):
                 result[key] = round(float(result[key]) * quantity, 1)
             result["food"] = str(result.get("food", "Food estimate"))
             return self._json(200, result)
-       except Exception as e:
-    print("Food analysis error:", repr(e))
-    return self._json(500, {"detail": str(e)[:500]})
+               except Exception as e:
+            print("Food analysis error:", repr(e))
+            return self._json(500, {"detail": str(e)[:500]})
 
     def do_GET(self):
         return self._json(405, {"detail": "Use POST to analyze a food image."})
