@@ -37,7 +37,7 @@ class handler(BaseHTTPRequestHandler):
                 "Use realistic approximate estimates; do not claim laboratory accuracy."
             )
             response = client.models.generate_content(
-                model="gemini-2.5-flash",
+                model="gemini-3.5-flash-lite",
                 contents=[
                     prompt,
                     types.Part.from_bytes(data=image_bytes, mime_type=mime_type),
