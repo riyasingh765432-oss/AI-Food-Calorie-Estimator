@@ -6,7 +6,7 @@ An intelligent food calorie estimation application built using **Python, Streaml
 
 It also provides daily nutrition summaries, calorie-goal tracking, weekly progress visualization, smart food suggestions, and downloadable nutrition reports — all through an interactive web interface.
 
----
+**Live Demo:** [Try AI Food Calories Estimator](https://ai-food-calorie-estimator.streamlit.app)
 
 ## 📌 Table of Contents
 
