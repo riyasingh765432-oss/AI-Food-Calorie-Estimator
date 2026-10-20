@@ -3,5 +3,4 @@ name = "ai-food-calorie-estimator"
 version = "1.0.0"
 dependencies = ["google-genai"]
 
-[tool.vercel]
-entrypoint = "api.analyze:handler"
+
