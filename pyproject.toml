@@ -4,4 +4,4 @@ version = "1.0.0"
 dependencies = ["google-genai"]
 
 [tool.vercel]
-entrypoint = "api/analyze.py"
+entrypoint = "api.analyze:handler"
