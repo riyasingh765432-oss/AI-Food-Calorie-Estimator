@@ -1,8 +1,7 @@
 <escape>{
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "functions": {
-    "api/analyze.py": {
-      "runtime": "python"
-    }
-  }
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "api/analyze.py", "use": "@vercel/python" }
+  ]
 }</escape>
