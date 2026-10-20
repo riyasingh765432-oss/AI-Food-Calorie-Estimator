@@ -63,7 +63,13 @@ form.addEventListener('submit',async e=>{
    const reader=new FileReader();reader.onload=()=>resolve(reader.result.split(',')[1]);reader.onerror=reject;reader.readAsDataURL(file);
   });
   const response=await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({image:base64,mime_type:file.type,quantity})});
-  const data=await response.json();
+  const text = await response.text();
+let data;
+try {
+  data = JSON.parse(text);
+} catch {
+  throw new Error("API returned a non-JSON response: " + text.slice(0, 200));
+}
   if(!response.ok)throw new Error(data.detail||'Analysis failed. Check your Vercel environment variable.');
   document.getElementById('foodName').textContent=data.food||'Food estimate';
   for(const key of ['calories','protein','carbs','fat']){
